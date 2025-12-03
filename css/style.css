@@ -1,0 +1,374 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+
+}
+body{
+    background-color: #EBF1F4;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+.mode{
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #E1EAEF;
+    border-radius: 50px;
+    backdrop-filter: blur(8px);
+    margin: 15px;
+    padding: 5px 10px;
+    justify-content: space-between;
+    width: 110px;
+    font-size: larger;
+    z-index: 10;
+    align-items: center;
+}
+.mode .active {
+    padding: 5px 10px;
+    background-color: #ffffff;
+    border-radius: 50px;
+}
+.mode div i {
+    cursor: pointer;
+}
+.mode div{
+    padding: 5px 10px;
+    
+}
+.name-center {
+    padding: 50px;
+ display: flex;
+ justify-content: center ;
+ align-items: center;    
+}
+.grid-template {
+    padding: 50px;
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    grid-template-rows: repeat(5, 300px);
+    gap: 15px;
+}
+/* config cards */
+.card {
+    transition: all 0.3s;
+    border-radius: 15px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.178);
+}
+.card .header {
+  margin-bottom: 10px;
+}
+
+.card .header .badge {
+    text-transform: capitalize;
+    display: inline-block;
+    background-color: rgb(11, 165, 165);
+    padding: 10px;
+    border-radius: 50px;
+    color: white;
+}
+/* about me card */
+.card.aboutme{
+    grid-column: span 3;
+    overflow: auto;
+   
+}
+.card.aboutme .badge{
+    margin-bottom: 0px;
+}
+.card.aboutme p {
+     line-height: 2;
+}
+/* service card */
+.card.services{
+    grid-column: span 2;
+    height: 100%;
+}
+.card.services .badge{
+    background-color: rgb(11, 165, 165);
+}
+.card.services .swiper {
+  width: 300px;
+  height: 190px;
+}
+
+/* image card */
+.card.profile-telegram{
+    grid-column: span 1;
+    grid-row: span 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.card.profile-telegram .header .badge{
+  background-color: rgb(11, 165, 165);
+}
+.card.profile-telegram .profile-description{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    padding-top: 10px;
+    
+    
+}
+.card.profile-telegram .image-profile{
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+
+}
+.card.profile-telegram .profile-description button{
+    margin-top: auto;
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: all 0.3s;
+}
+.card.profile-telegram .profile-description button:hover{
+    background-color: rgba(0, 0, 0, 0.733);
+    
+}
+
+.card.profile-telegram img{
+    width: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px dashed;
+}
+/* github card */
+.card.github{
+    cursor: pointer;
+    grid-column: span 1;
+    padding-inline: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+    font-size: 100px;
+}
+.card:hover{
+    transform: translateY(-5px);
+}
+/* experiences */
+.card.experiences{
+    grid-column: span 4;
+    grid-row: span 3;
+}
+.card.experiences .content-body .row .right {
+    color: rgba(0, 0, 0, 0.534);
+}
+.card.experiences .content-body .row{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.39);
+}
+/* Projects Cards - Bento Box Style */
+.card.project-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card.project-card .project-header {
+    margin-bottom: 5px;
+}
+
+.card.project-card .project-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 5px 15px;
+    border-radius: 20px;
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.card.project-card h2 {
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: #1a1a1a;
+}
+
+.card.project-card p {
+    color: #666;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.card.project-card .project-tech {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: auto;
+}
+
+.card.project-card .project-tech span {
+    background-color: #f0f0f0;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    color: #333;
+}
+
+.card.project-card .project-image {
+    width: 100%;
+    height: 120px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.card.project-card .project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* my projects */
+.card.myproject{
+    grid-row: span 2;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.card.myproject .image-container img{
+    width: 100%;
+    border-radius: 15px;
+    margin-top: 10px;
+}
+.card.myproject button{
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    margin-top: auto;
+    border: 0;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.card.contact {
+    grid-column: span 1;
+    grid-row: span 2;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.card.contact .img{
+    display: flex;
+    justify-content: center;
+}
+.card.contact .img img{
+    width: 300px;
+    transform: rotate(45deg);
+}
+.card.contact button{
+    margin-top: auto;
+    background-color: black;
+    color: white;
+    border: 0;
+    border-radius: 50px;
+    padding: 10px 15px;
+}
+.card.account {
+    height: 200px;
+}
+.card.account .icons{
+    margin-bottom: 100px;
+}
+.card.account .icons i {
+    font-size: 50px;
+}
+
+.accounts{
+    grid-column: span 6;
+    display: flex;
+    column-gap: 15px;
+}
+.card.account{
+    width: 100%;
+   
+}
+
+
+
+@media  (max-width:865px){
+    .card.github{
+        grid-column: span 4;
+    }
+    .grid-template {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        padding: 30px;
+    }
+
+    .card.aboutme {
+        grid-column: span 4;
+    }
+
+    .card.services {
+        grid-column: span 4;
+    }
+
+    .card.profile-telegram {
+        grid-column: span 4;
+        grid-row: span 1;
+    }
+
+    .card.experiences {
+        grid-column: span 4;
+        grid-row: span 2;
+    }
+
+    .card.myproject {
+        grid-column: span 4;
+    }
+
+    .card.contact {
+        grid-column: span 4;
+    }
+
+    .accounts {
+        grid-column: span 4;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .profile-description{
+        display: flex;
+        gap: 15px;
+    }
+}
+
+.dark{
+    background-color: #242222;
+    color: white !important;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.178);
+}
+.dark button{
+    border: 0;
+    border: 2px solid white !important;
+}
+
+.white{
+    color: white !important;
+}
